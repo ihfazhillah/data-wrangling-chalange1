@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+</head>
+<body>
+    
+    <div id="view"></div>
+
+    <script src="https://vega.github.io/vega/vega.min.js"></script>
+    <script>
+        var spec = {
+        }
+var spec = {
+  "width": 500,
+  "height": 200,
+  "padding": 5,
+
+
+  "data": [
+    {
+      "name": "table",
+      "format": {"type": "csv", "parse": {"Date": "date", "Price": "number"}},
+      "url": "https://raw.githubusercontent.com/ihfazhillah/data-wrangling-chalange1/master/daily_henry_hub_gas.csv"
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "x",
+      "type": "time",
+      "range": "width",
+      "domain": {"data": "table", "field": "Date"}
+    },
+    {
+      "name": "y",
+      "range": "height",
+      "nice": true,
+      "zero": true,
+      "type": "linear",
+      "domain": {"data": "table", "field": "Price"}
+    }
+  ],
+
+  "axes": [
+    {"orient": "bottom", "scale": "x"},
+    {"orient": "left", "scale": "y"}
+  ],
+
+  "marks": [
+        {
+          "type": "line",
+          "from": {"data": "table"},
+          "encode": {
+            "enter": {
+              "x": {"scale": "x", "field": "Date"},
+              "y": {"scale": "y", "field": "Price"},
+              "strokeWidth": {"value": 2}
+            },
+            "update": {
+              "fillOpacity": {"value": 1}
+            },
+            "hover": {
+              "fillOpacity": {"value": 0.5}
+            }
+          }
+        }
+    
+  ]
+}
+
+        var view = new vega.View(vega.parse(spec), {renderer: 'canvas', container:'#view'})
+        view.runAsync()
+    </script>
+</body>
+</html>
