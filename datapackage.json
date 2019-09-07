@@ -1,18 +1,42 @@
 {
-    "name": "henry hub gas - daily",
-    "resources": [
+  "name": "henry_hub_gas-daily",
+  "resources": [
+    {
+      "path": "daily_henry_hub_gas.csv",
+      "pathType": "local",
+      "name": "daily_henry_hub_gas",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "fields": [
         {
-            "path": "daily_henry_hub_gas.csv",
-            "fields": [
-                {
-                    "name": "Date",
-                    "type": "string"
-                },
-                {
-                    "name": "Price",
-                    "type": "float"
-                }
-            ]
+          "name": "Date",
+          "type": "string"
+        },
+        {
+          "name": "Price",
+          "type": "float"
         }
-    ]
+      ],
+      "encoding": "ISO-8859-2"
+    }
+  ],
+  "readme": "# data-wrangling-chalange1\ndatopian data wrangling chalange from https://gist.github.com/rufuspollock/f295e6d2fd6fecb705ff\n",
+  "description": "# data-wrangling-chalange1\ndatopian data wrangling chalange from https://gist.github.com/rufuspolloc",
+  "licenses": [
+    {
+      "name": "ODC-PDDL",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License"
+    },
+    {
+      "name": "ODC-By",
+      "path": "https://opendatacommons.org/licenses/by/",
+      "title": "Open Data Commons Attribution License"
+    },
+    {
+      "name": "ODC-ODbL",
+      "path": "https://opendatacommons.org/licenses/odbl/",
+      "title": "Open Data Commons Open Database License"
+    }
+  ]
 }
